@@ -2,8 +2,8 @@ import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
-import GuestLayout from '@/Layouts/GuestLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import {Head, Link, useForm} from '@inertiajs/react';
+import Layout from "@/Layouts/Layout.jsx";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -22,8 +22,13 @@ export default function Register() {
     };
 
     return (
-        <GuestLayout>
-            <Head title="Register" />
+        <Layout>
+            <Head title="Register"/>
+
+            <div className="flex min-h-screen justify-center bg-gray-100 items-center">
+                <div className="bg-white   p-5 rounded-3xl">
+
+
 
             <form onSubmit={submit}>
                 <div>
@@ -115,6 +120,9 @@ export default function Register() {
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+                </div>
+
+            </div>
+        </Layout>
     );
 }

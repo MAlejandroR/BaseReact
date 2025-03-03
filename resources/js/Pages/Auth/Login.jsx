@@ -3,8 +3,8 @@ import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
-import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
+import Layout from "@/Layouts/Layout.jsx";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -22,7 +22,9 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <GuestLayout>
+        <Layout>
+            <div className="flex min-h-screen justify-center bg-gray-100 items-center">
+                <div className="bg-white   p-5 rounded-3xl">
             <Head title="Log in" />
 
             {status && (
@@ -95,6 +97,8 @@ export default function Login({ status, canResetPassword }) {
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+            </div>
+            </div>
+        </Layout>
     );
 }
